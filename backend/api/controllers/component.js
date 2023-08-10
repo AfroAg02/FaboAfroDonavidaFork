@@ -8,7 +8,7 @@ exports.post = (req,res) =>{
         console.log("entra al if")
         return res.status(400).json("Parametros incompletos");
     }
-    Component.findOne({etiqueta:etiqueta})
+    Component.findOne({name:name})
     .then(component => {
         if(component){
             console.log("entra al if 2")
@@ -24,7 +24,7 @@ exports.post = (req,res) =>{
             component.save();
             res.json({
                 success:true,
-                message:"Componente creado excitosament",
+                message:"Componente creado exitosamente",
                 component:component
                 });
         }
@@ -34,5 +34,25 @@ exports.post = (req,res) =>{
         res.json("Ha ocurrido un error " + err);
     });
 };
+
+
+
+
+exports.getComponent = (req, res) => {
+    const name = req.params.name;
+    Component.findOne({name:name}).then(component=>{
+        if(component){
+            res.json(component);
+        }else {
+            throw new Error("No existe componente con ese nombre");
+        }
+    }
+        ).catch(err=>{
+            res.status(404).json(err);
+        })
+  };
+
+
+
 
 ///ojo la validacion es por la etiqueta pq no tiene sentido que sea la misma
