@@ -12,7 +12,7 @@ const esquemaMeta = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Rol'
     },
-    componentes: [{
+    components: [{
         type: Schema.Types.ObjectId,
         ref: 'Componente'
       }],

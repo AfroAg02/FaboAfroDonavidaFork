@@ -1,22 +1,28 @@
 const Meta = require("../models/Meta");
 const Rol = require("../models/Rol");
+const mongoose = require("mongoose");
 
 exports.post = (req, resp) => {
   //valido que el rol no este vacio
-  const { rol, componentes } = req.body;
+  const { rol, components } = req.body;
   if (!rol) {
     return resp.status(400).json("Rol no valido");
   }
   //Valido la existencia de ese rol
-  Rol.findOne({ rol: rol })
+  Rol.findOne({ name: rol })
     .then(rol => {
+        console.log(rol);
       if (!rol) {
         throw new Error("Rol no existe");
       } else {
-        meta = new Meta({
-          rol: rol_id,
-          componentes: componentes,
+            meta = new Meta({
+          rol: rol,
+          componentes:[],
         });
+        components.forEach(component => {
+            meta.components.push(component);
+          });
+        
         return meta.save();
       }
     })
