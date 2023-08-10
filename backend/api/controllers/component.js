@@ -24,7 +24,7 @@ exports.post = (req,res) =>{
             component.save();
             res.json({
                 success:true,
-                message:"Componente creado excitosament",
+                message:"Componente creado exitosamente",
                 component:component
                 });
         }
