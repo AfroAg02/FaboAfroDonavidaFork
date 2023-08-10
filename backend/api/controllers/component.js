@@ -10,7 +10,6 @@ exports.post = (req,res) =>{
     Component.findOne({name:name})
     .then(component => {
         if(component){
-            console.log("entra al if 2")
             return res.status(400).json("Componente ya existente");
         }else{
             console.log("entra al else")
