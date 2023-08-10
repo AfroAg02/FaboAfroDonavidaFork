@@ -34,8 +34,8 @@ app.use(cors({
 
 
 //Routes
-app.use('component',require("./routes/users"));
-app.use('rol',require("./routes/rol"));
+app.use(require("./routes/users"));
+app.use(require("./routes/rol"));
 app.use(require("./routes/meta"));
 app.use(require("./routes/components"));
 // raiz
@@ -56,6 +56,6 @@ app.set("port", config.PORT);
 
 //Middlewares
 
-app.listen(3000/*config.PORT, config.HOST*/, () => {
+app.listen(config.PORT, config.HOST, () => {
   console.log(`Server mode ${config.NODE_ENV} in http://${config.HOST}:${config.PORT}`);
 });

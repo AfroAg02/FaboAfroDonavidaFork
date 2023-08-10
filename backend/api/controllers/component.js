@@ -5,8 +5,7 @@ exports.post = (req,res) =>{
     const{etiqueta,name,type} = req.body;
     const valor = req.body.value;
     if(!etiqueta || !name || !type){
-        console.log("entra al if")
-        return res.status(400).json("Parametros incompletos");
+            return res.status(400).json("Parametros incompletos");
     }
     Component.findOne({name:name})
     .then(component => {
