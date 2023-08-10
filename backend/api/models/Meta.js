@@ -12,110 +12,11 @@ const esquemaMeta = new Schema({
         type:String,
         required: true,
     },
-    Componentes:[esquemaComponentes]
+    componentes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Componente'
+      }],
       
 });
 
-module.exports = model("Meta",esquemaMeta);   /*Clave:{
-    type: String,
-    default:"String", 
-    componentType:{
-        type:String,
-        required:true
-    }      
-},
-
-
-DirPostal:{
-    type: String,
-    default:"String", 
-    componentType:{
-        type:String,
-        required:true
-    }      
-},
-UsuarioWA:{
-    type: String,
-    default:"String" , 
-    componentType:{
-        type:String,
-        required:true
-    }     
-},
- Components :[ {
-    NomUsuario:{
-        type: String,
-        default:"String", 
-        componentType:{
-            type:String,
-            required:true
-        }  ,  
-        titulo:{
-            type:String,
-            required:true
-        },
-        value:{
-            type:[String],
-            default:[]
-        }
-    },
-    CI:{
-        type: String,
-        default:"String", 
-        componentType:{
-            type:String,
-            required:true
-        } ,  
-        titulo:{
-            type:String,
-            required:true
-        },
-        value:{
-            type:[String],
-            default:[]
-        }     
-    }, 
-     NombreCompleto:{
-        type: String,
-        default:"String", 
-        componentType:{
-            type:String,
-            required:true
-        },  
-        titulo:{
-            type:String,
-            required:true
-        },
-        value:{
-            type:[String],
-            default:[]
-        }      
-    },
-}],
- UsuarioTelegram:{
-        type: String,
-        default:"String"  , 
-        componentType:{
-            type:String,
-            required:true
-        }    
-    },
-    DirCorreoE:{
-        type: String,
-        default:"String", 
-        componentType:{
-            type:String,
-            required:true
-        }   
-    },*//* idUsuario : {
-            type: String,
-            default:"int", 
-            componentType:{
-                type:String,
-                required:true
-            },
-            titulo:{
-                type:String,
-                required:true
-            }  
-    },*/
+module.exports = model("Meta",esquemaMeta); 
