@@ -20,4 +20,4 @@ const esquemaComponente = new Schema({
 //regex para el campo
 });
 
-module.exports = esquemaComponente;
+module.exports = model('Componente',esquemaComponente);
