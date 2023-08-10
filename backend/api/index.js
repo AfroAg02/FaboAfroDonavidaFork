@@ -34,8 +34,8 @@ app.use(cors({
 
 
 //Routes
-app.use(require("./routes/users"));
-app.use(require("./routes/rol"));
+app.use('component',require("./routes/users"));
+app.use('rol',require("./routes/rol"));
 app.use(require("./routes/meta"));
 // raiz
 app.get('/', (req, res) => {
