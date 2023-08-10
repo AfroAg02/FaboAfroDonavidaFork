@@ -3,6 +3,7 @@ const{Schema,model} = require('mongoose');
 const esquemaComponente = new Schema({
     etiqueta:{//nombre de la etiqueta ex sexo
         type:String,
+        unique:true,
         required:true
     },
     name:{//nombre del componente
