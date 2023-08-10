@@ -9,7 +9,7 @@ exports.postCreateUser = (req, res) => {
   const { userName, email, password } = req.body;
    if (!userName || !email || !password) {
     throw new Error("need to complete all fields");
-  }
+  } 
   //Verificar que el email no se repita
   User.findOne({ email: email })
     .then(user => {
