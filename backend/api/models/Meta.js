@@ -9,8 +9,8 @@ const esquemaMeta = new Schema({
         default:Date.now()
     },
     rol: {
-        type:String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'Rol'
     },
     componentes: [{
         type: Schema.Types.ObjectId,
